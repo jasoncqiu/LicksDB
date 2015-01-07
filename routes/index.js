@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'LickDB', types: ['Major', 'Minor', 'Dominant'] });
 });
 
 /* hello world page. */
@@ -57,6 +57,11 @@ router.post('/adduser', function(req, res) {
             res.redirect("userlist");
         }
     });
+});
+
+router.post('/select_type', function(req, res) {
+    var type = req.body.selected_type;
+    res.render('results', {title : 'Results', type: type});
 });
 
 module.exports = router;

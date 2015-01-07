@@ -3,3 +3,9 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}
+    form#formTypes(name = "select_type",method="post",action="/select_type")
+        select(name="selected_type")
+            option(value='')
+            each type in types
+                option(value=t)= type
+        button#btnSubmit(type="submit") submit
