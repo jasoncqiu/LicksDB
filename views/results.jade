@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Licks for #{type} chords.
+    h1= title
+    p Licks for #{type} chords:
+    p #{results}
+    #notation
+    script(type="text/javascript").
+        ABCJS.renderAbc('notation', result);
+
+
