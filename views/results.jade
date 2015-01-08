@@ -3,9 +3,10 @@ extends layout
 block content
     h1= title
     p Licks for #{type} chords:
-    p #{results}
-    #notation
-    script(type="text/javascript").
-        ABCJS.renderAbc('notation', result);
+    each lick, i in results
+        div(id=i.toString())
+        script(type="text/javascript").
+            var num = #{i};
+            ABCJS.renderAbc(num.toString(), '#{lick.lick}');
 
 
