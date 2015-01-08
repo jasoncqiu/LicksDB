@@ -5,7 +5,15 @@ block content
     p Welcome to #{title}
     form#formTypes(name = "select_type",method="post",action="/select_type")
         select(name="selected_type")
-            option(value='')
+            option(value='')= '<Type>'
             each type in types
-                option(value=t)= type
+                option(value=type)= type
+        select(name="selected_key")
+            option(value='')= '<Key>'
+            each type in types
+                option(value=type)= type
+        select(name="selected_meter")
+            option(value='')= '<Meter>'
+            each type in types
+                option(value=type)= type
         button#btnSubmit(type="submit") submit
