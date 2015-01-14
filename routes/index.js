@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'LickDB', types: ['major', 'minor', 'dominant'] });
+  res.render('index', { title: 'LicksDB', types: ['major', 'minor', 'dominant'] });
 });
 
 /* hello world page. */
