@@ -10,7 +10,7 @@ block content
             nav
               ul.nav.masthead-nav
                 li.active
-                  a(href='#') Home
+                  a(href='newlick') Add Lick
                 li
                   a(href='#') Features
                 li
@@ -18,26 +18,24 @@ block content
         .inner.cover
           h1.cover-heading Welcome to #{title}
           form#formParameters(class='form-inline', role='form', method="post", action="/select_type")
-              .row
-                .form-group
-                    select(class='form-control', name="selected_type")
-                        option(value='')= '<Type>'
-                        each type in types
-                            option(value=type)= type
-                .form-group
-                    select(class='form-control', name="selected_key")
-                        option(value='')= '<Key>'
-                        each type in types
-                            option(value=type)= type
-                .form-group
-                    select(class='form-control', name="selected_meter")
-                        option(value='')= '<Meter>'
-                        each type in types
-                            option(value=type)= type
-              .row
-                &nbsp;
-              .row
-                button.btn.btn-default(type='submit') Submit
+            .form-group
+              select(class='form-control', name="selected_type")
+                  option(value='')= '<Type>'
+                  each type in types
+                      option(value=type)= type
+            .form-group
+              select(class='form-control', name="selected_key")
+                  option(value='')= '<Key>'
+                  each type in types
+                      option(value=type)= type
+            .form-group
+              select(class='form-control', name="selected_meter")
+                  option(value='')= '<Meter>'
+                  each type in types
+                      option(value=type)= type
+            .row
+              &nbsp;
+            button.btn.btn-default(type='submit') Submit
         .mastfoot
           .inner
             p
@@ -46,12 +44,3 @@ block content
               | , by 
               a(href='https://twitter.com/mdo') @mdo
               | .
-  //
-    Bootstrap core JavaScript
-    ==================================================
-  // Placed at the end of the document so the pages load faster
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-  script(src='../../dist/js/bootstrap.min.js')
-  script(src='../../assets/js/docs.min.js')
-  // IE10 viewport hack for Surface/desktop Windows 8 bug
-  script(src='../../assets/js/ie10-viewport-bug-workaround.js')
