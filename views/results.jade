@@ -1,12 +1,11 @@
 extends layout
 
 block content
-    h1= title
-    p Licks for #{type} chords:
-    each lick, i in results
-        div(id=i.toString())
-        script(type="text/javascript").
-            var num = #{i};
-            ABCJS.renderAbc(num.toString(), '#{lick.lick}');
-
-
+    .container(align='center')
+        h1 Licks for #{type} chords:
+        .jumbotron
+            each lick, i in results
+                div(id=i.toString())
+                script(type="text/javascript").
+                    var num = #{i};
+                    ABCJS.renderAbc(num.toString(), '#{lick.lick}');
