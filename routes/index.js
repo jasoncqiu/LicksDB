@@ -76,7 +76,7 @@ router.post('/select_type', function(req, res) {
 
 // new lick page
 router.get('/newlick', function(req, res) {
-    res.render('newlick');
+    res.render('newlick', {title: 'Add New Lick'});
 });
 
 //POST to new lick submit

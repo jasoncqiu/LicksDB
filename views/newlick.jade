@@ -1,22 +1,31 @@
 extends layout
 
 block content
-    script(src='abcjs_editor_1.12-min.js', type='text/javascript')
+  script(src='abcjs_editor_1.12-min.js', type='text/javascript')
+  .site-wrapper
+    .cover-container
+      .inner
+        h3.masthead-brand LicksDB
+        nav
+          ul.nav.masthead-nav
+            li.active
+              a(href='/') Home
+    br
     .container(align='center')
       h1
         | Add Lick To DB
         h1
           form(class='form-inline', role='form', action='licksubmit', method='POST')
             .form-group
-              | Type:
+              | Type: 
               input(class='form-control', type='text', name='type')
               |  
             .form-group
-              | Key: 
+              | &nbsp;Key: 
               input(class='form-control', type='text', name='key')
               |  
             .form-group
-              | Meter: 
+              | &nbsp;Meter: 
               input(class='form-control', type='text', name='meter')
               |  
             br
@@ -44,3 +53,5 @@ block content
                 abc_editor = new ABCJS.Editor("abc", { paper_id: "paper", warnings_id:"warnings" });
                 }
             button.btn.btn-default(type='submit') Submit
+            br
+            br

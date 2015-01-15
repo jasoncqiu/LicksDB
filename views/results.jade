@@ -1,11 +1,20 @@
 extends layout
 
 block content
+  .site-wrapper
+    .cover-container
+      .inner
+        h3.masthead-brand LicksDB
+        nav
+          ul.nav.masthead-nav
+            li.active
+              a(href='/') Home
+    br
     .container(align='center')
-        h1 Licks for #{type} chords:
-        .jumbotron
-            each lick, i in results
-                div(id=i.toString())
-                script(type="text/javascript").
-                    var num = #{i};
-                    ABCJS.renderAbc(num.toString(), '#{lick.lick}');
+      h1 Licks for #{type} chords:
+      .jumbotron
+        each lick, i in results
+          div(id=i.toString())
+          script(type="text/javascript").
+            var num = #{i};
+            ABCJS.renderAbc(num.toString(), '#{lick.lick}');
