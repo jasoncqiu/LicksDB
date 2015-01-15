@@ -11,13 +11,9 @@ block content
               ul.nav.masthead-nav
                 li.active
                   a(href='newlick') Add Lick
-                li.active
-                  a(href='#') Features
-                li.active
-                  a(href='#') Contact
         .inner.cover
           h1.cover-heading Welcome to #{title}
-          form#formParameters(class='form-inline', role='form', method="post", action="/select_type")
+          form#formParameters(class='form-inline', role='form', method="post", action="/select_parameters")
             .form-group
               select(class='form-control', name="selected_type")
                   option(value='')= '<Type>'
@@ -26,13 +22,13 @@ block content
             .form-group
               select(class='form-control', name="selected_key")
                   option(value='')= '<Key>'
-                  each type in types
-                      option(value=type)= type
+                  each key in keys
+                      option(value=key)= key
             .form-group
               select(class='form-control', name="selected_meter")
                   option(value='')= '<Meter>'
-                  each type in types
-                      option(value=type)= type
+                  each meter in meters
+                      option(value=meter)= meter
             .row
               &nbsp;
             button.btn.btn-default(type='submit') Submit

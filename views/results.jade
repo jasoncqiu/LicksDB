@@ -12,7 +12,7 @@ block content
               a(href='/') Home
     br
     .container(align='center')
-      h1 Licks for #{type} chords:
+      h1 Licks of type #{type}, key #{key}, and meter #{meter}:
       .jumbotron
         each lick, i in results
           div(id=i.toString())
