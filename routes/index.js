@@ -9,11 +9,6 @@ router.get('/', function(req, res) {
     meters: ['4/4', '3/4', '3/8']});
 });
 
-/* GET New User page. */
-router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
-});
-
 router.post('/select_parameters', function(req, res) {
     var type = req.body.selected_type;
     var key = req.body.selected_key;
@@ -47,16 +42,10 @@ router.post('/licksubmit', function(req, res) {
     var key = req.body.key;
     var meter = req.body.meter;
     var licktext = req.body.licktext;
-    // console.log(key);
-    // console.log(meter);
-    // console.log(licktext);
-    console.log("before:\n");
-    console.log(licktext);
-    console.log("after:\n");
     licktext = licktext.split("\n").join("\\n"); //replace all /n with //n's
     licktext = licktext.split("\r").join("\\r"); //replace all /n with //n's
-    //licktext = licktext.replace("\n", "\\n");
-    console.log(licktext);
+    licktext = licktext.split("\'").join("\\'"); //escape quotes
+    
     // Set our collection
     var collection = db.get('licks');
 
